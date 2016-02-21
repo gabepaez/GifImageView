@@ -124,6 +124,10 @@ public class GifImageView extends ImageView implements Runnable {
     return (animating || renderFrame) && gifDecoder != null && animationThread == null;
   }
 
+  public boolean validGif() {
+    return gifDecoder.getStatus() == GifDecoder.STATUS_OK;
+  }
+
   public int getGifWidth() {
     return gifDecoder.getWidth();
   }
