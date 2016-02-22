@@ -507,7 +507,7 @@ class GifDecoder {
     downsampledWidth = header.width / sampleSize;
     downsampledHeight = header.height / sampleSize;
 
-    if (header.frameCount <= 0 || framePointer < 0) {
+    if (header.frameCount <= 0) {
       status = STATUS_FORMAT_ERROR;
     }
   }
