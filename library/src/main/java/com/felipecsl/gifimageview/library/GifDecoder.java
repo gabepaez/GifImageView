@@ -506,6 +506,10 @@ class GifDecoder {
         bitmapProvider.obtainIntArray((header.width / sampleSize) * (header.height / sampleSize));
     downsampledWidth = header.width / sampleSize;
     downsampledHeight = header.height / sampleSize;
+
+    if (header.frameCount <= 0 || framePointer < 0) {
+      status = STATUS_FORMAT_ERROR;
+    }
   }
 
   private GifHeaderParser getHeaderParser() {
